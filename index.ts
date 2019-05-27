@@ -2,5 +2,5 @@
 import './style.css';
 
 // Write TypeScript code!
-const appDiv: HTMLElement = document.getElementById('app');
-appDiv.innerHTML = `<h1>Hello</h1>`;
+const myAppDiv: HTMLElement = document.getElementById('app');
+myAppDiv.innerHTML = "<a-scene><a-box color='red' position='0 2 -5' rotation='0 45 45' scale='2 2 2'> </a-box></a-scene>";
