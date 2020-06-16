@@ -56,23 +56,23 @@ promise1.then((value) => {
   myAppDiv.innerHTML+= "value:" + value  
 })
 
-function resolveAfter2Seconds()
+function resolveAfter4Seconds()
 {
   return new Promise(resolve =>
   {
     setTimeout(() =>
     {
-      resolve('resolveAfter2Seconds resolved')
-    }, 2000)
+      resolve('resolveAfter4Seconds resolved')
+    }, 4000)
   })
 }
 
 async function asyncCall1() {
   myAppDiv.innerHTML+= "<BR>"
-  myAppDiv.innerHTML+= "calling asyncCall11:"
+  myAppDiv.innerHTML+= "calling asyncCall1"
   setTimeout(() => {
       myAppDiv.innerHTML+= "<BR>"
-      myAppDiv.innerHTML+= "end asyncCall11:"
+      myAppDiv.innerHTML+= "end asyncCall1"
     }, 10000)
 }
 
@@ -81,8 +81,8 @@ async function asyncCall2()
   myAppDiv.innerHTML+= "<BR>"
   myAppDiv.innerHTML+= "calling asyncCall2"
   myAppDiv.innerHTML+= "<BR>"
-  myAppDiv.innerHTML+= "waiting..."
-  const result = await resolveAfter2Seconds()
+  myAppDiv.innerHTML+= "asyncCall2 waiting..."
+  const result = await resolveAfter4Seconds()
   myAppDiv.innerHTML+= "<BR>"
   myAppDiv.innerHTML+= "result:" + result
 }
