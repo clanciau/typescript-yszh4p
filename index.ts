@@ -17,10 +17,10 @@ class Toto
   {
     console.log("setValue")
     this._value = value
-    }
+  }
 }
 
-var toto:Toto=new Toto
+const toto:Toto=new Toto
 myAppDiv.innerHTML+= toto.value
 toto.value=11
 myAppDiv.innerHTML+= "<BR>"
