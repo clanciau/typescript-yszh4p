@@ -43,25 +43,28 @@ add()
 add()
 //
 
-  const promise1=  new Promise(resolve => {
-    setTimeout(() => {
-      resolve('resolved')
-    }, 2000)
-  });
+ const promise1 = new Promise(resolve =>
+ {
+  setTimeout(() =>
+  {
+    resolve('Promise1 resolved')
+  }, 2000)
+ })
 
 promise1.then((value) => {
-  console.log(value)
   myAppDiv.innerHTML+= "<BR>"
-    myAppDiv.innerHTML+= "counter:" + value
-  // expected output: "foo"
-});
+  myAppDiv.innerHTML+= "value:" + value  
+})
 
-function resolveAfter2Seconds() {
-  return new Promise(resolve => {
-    setTimeout(() => {
-      resolve('resolved');
-    }, 2000);
-  });
+function resolveAfter2Seconds()
+{
+  return new Promise(resolve =>
+  {
+    setTimeout(() =>
+    {
+      resolve('resolveAfter2Seconds resolved')
+    }, 2000)
+  })
 }
 
 async function asyncCall1() {
@@ -70,12 +73,13 @@ async function asyncCall1() {
   setTimeout(() => {
       myAppDiv.innerHTML+= "<BR>"
       myAppDiv.innerHTML+= "end asyncCall11:"
-    }, 10000);
+    }, 10000)
 }
 
-async function asyncCall2() {
+async function asyncCall2()
+{
   myAppDiv.innerHTML+= "<BR>"
-   myAppDiv.innerHTML+= "calling asyncCall2:"
+  myAppDiv.innerHTML+= "calling asyncCall2"
   myAppDiv.innerHTML+= "<BR>"
   myAppDiv.innerHTML+= "waiting..."
   const result = await resolveAfter2Seconds()
@@ -83,8 +87,8 @@ async function asyncCall2() {
   myAppDiv.innerHTML+= "result:" + result
 }
 
-asyncCall1();
-asyncCall2();
+asyncCall1()
+asyncCall2()
 
 
 
