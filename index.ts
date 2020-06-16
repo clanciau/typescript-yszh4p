@@ -4,7 +4,7 @@ import './style.css'
 // Write TypeScript code!
 const myAppDiv: HTMLElement = document.getElementById('app')
 
-class toto
+class Toto
 {
 private _value:number=10
   get value(): number {
@@ -18,7 +18,7 @@ private _value:number=10
     }
 }
 
-var titi=new toto
+var titi=new Toto
 myAppDiv.innerHTML = titi.value.toString()
 titi.value=11
 myAppDiv.innerHTML+= "<BR>"
