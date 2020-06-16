@@ -6,22 +6,22 @@ const myAppDiv: HTMLElement = document.getElementById('app')
 
 class Toto
 {
-private _value:number=10
-  get value(): number {
-        return this._value;
-    }
+  private _value:number=10
 
-    set value(newValue: number) {
-       console.log("setValue");
-            this._value = newValue;
-       
+  get value(): number
+  {
+    return this._value
+  }
+  
+  set value(value: number)
+  {
+    console.log("setValue")
+    this._value = value
     }
 }
 
-var titi=new Toto
-myAppDiv.innerHTML = titi.value.toString()
-titi.value=11
+var toto:Toto=new Toto
+myAppDiv.innerHTML+= toto.value
+toto.value=11
 myAppDiv.innerHTML+= "<BR>"
-myAppDiv.innerHTML+= titi.value.toString()
-
-myAppDiv.innerHTML = "<a-scene><a-box color='red' position='0 2 -5' rotation='0 45 45' scale='2 2 2'> </a-box></a-scene>"
+myAppDiv.innerHTML+= toto.value
