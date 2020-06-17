@@ -67,21 +67,21 @@ function resolveAfter4Seconds()
   })
 }
 
-async function asyncCall1() {
-  myAppDiv.innerHTML+= "<BR>"
-  myAppDiv.innerHTML+= "calling asyncCall1"
-  setTimeout(() => {
-      myAppDiv.innerHTML+= "<BR>"
-      myAppDiv.innerHTML+= "end asyncCall1"
-    }, 10000)
-}
-
 async function asyncCall2()
 {
   myAppDiv.innerHTML+= "<BR>"
   myAppDiv.innerHTML+= "calling asyncCall2"
+  setTimeout(() =>
+  {
+    myAppDiv.innerHTML+= "<BR>"
+    myAppDiv.innerHTML+= "end asyncCall2"
+  }, 10000)
+}
+
+async function asyncCall1()
+{
   myAppDiv.innerHTML+= "<BR>"
-  myAppDiv.innerHTML+= "asyncCall2 waiting..."
+  myAppDiv.innerHTML+= "asyncCall1 waiting..."
   const result = await resolveAfter4Seconds()
   myAppDiv.innerHTML+= "<BR>"
   myAppDiv.innerHTML+= "result:" + result
@@ -89,7 +89,8 @@ async function asyncCall2()
 
 asyncCall1()
 asyncCall2()
-
+myAppDiv.innerHTML+= "<BR>"
+myAppDiv.innerHTML+= "after async calls"
 
 
 
